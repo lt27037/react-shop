@@ -1,4 +1,5 @@
 import React from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 import ContentContainer from './layouts/ContentContainer';
 import Footer from './layouts/Footer';
@@ -8,11 +9,13 @@ import './styles/App.scss';
 
 const App = () => {
    return(
-      <div id="appContainer">
-         <Header />
-         <ContentContainer />
-         <Footer />
-      </div>
+      <Router>
+         <div id="appContainer">
+            <Header />
+            <ContentContainer />
+            <Footer />
+         </div>
+      </Router>
    )
 }
 

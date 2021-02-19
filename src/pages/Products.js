@@ -1,8 +1,18 @@
 import React from 'react';
 
+import ProductThumbnail from '../components/ProductThumbnail';
+
+import '../styles/Products.scss'
+
 const Products = () => {
    return(
-      <div> Products </div>
+      <div className="productsContainer">
+         <ProductThumbnail />
+         <ProductThumbnail />
+         <ProductThumbnail />
+         <ProductThumbnail />
+         <ProductThumbnail />
+      </div>
    );
 };
 

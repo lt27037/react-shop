@@ -1,0 +1,28 @@
+.product{
+   display: grid;
+   width: 100%;
+   padding: 5vh 10%;
+   grid-template-columns: repeat(2, 1fr);
+   column-gap: 1%;
+   &__photo{
+      aspect-ratio: 4 / 5;
+      height: 80vh;
+      justify-self: center;
+      align-self: start;
+   }
+   &__info{
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-self: center;
+   }
+   &__name{
+      font-size: 3.5rem;
+   }
+   &__price{
+      font-size: 2rem;
+   }
+   .button{
+      width: 200px;
+   }
+}
