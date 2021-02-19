@@ -1,8 +1,12 @@
 import React from 'react';
 
+import '../styles/Footer.scss';
+
 const Footer = () => {
    return(
-      <div> Footer </div>
+      <footer className="footer">
+         Sklep 2021 &copy;
+      </footer>
    )
 }
 

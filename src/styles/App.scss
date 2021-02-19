@@ -8,3 +8,11 @@
 :root{
    font-size: 62.5%;
 }
+
+#appContainer{
+   width: 100%;
+   display: grid;
+   grid-template-columns: 100%;
+   grid-template-rows: 60px 1fr 100px;
+   min-height: calc(100vh + 100px);
+}

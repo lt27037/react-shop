@@ -1,8 +1,12 @@
 import React from 'react';
 
+import '../styles/Header.scss';
+
 const Header = () => {
    return(
-      <div> Header </div>
+      <header className="mainHeader">
+         <span className="mainHeader__logo">Sklep</span>
+      </header>
    )
 }
 
