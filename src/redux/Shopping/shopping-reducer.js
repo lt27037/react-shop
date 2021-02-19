@@ -29,7 +29,7 @@ const products = [
 
 const INITIAL_STATE = {
    products, // {id, title, price, img}
-   cart: [{}], // {id, title, price, img, qty}
+   cart: [], // {id, title, price, img, qty}
    currentItem: null,
 };
 

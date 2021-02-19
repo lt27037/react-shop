@@ -1,16 +1,36 @@
-import React from 'react';
+import React, { useState, useEffect} from 'react';
 
 import { ReactComponent as CartIcon } from '../images/shopping-cart-solid.svg';
 
 import '../styles/CartCounter.scss'
 
-const CartCounter = () => {
+import { connect } from 'react-redux';
+
+const CartCounter = ({ cart }) => {
+
+   const [cartCount, setCartCount] = useState(0);
+
+   useEffect(
+      () => {
+         let count = 0;
+         cart.forEach(item => count += item.qty);
+         setCartCount((count));
+      },
+      [cart]
+   )
+
    return(
       <div className="cartCounter">
          <CartIcon className="cartCounter__cartIcon" />
-         <span className="cartCounter__counter">0</span>
+         <span className="cartCounter__counter">{cartCount}</span>
       </div>
    )
 }
 
-export default CartCounter;
+const mapStateToProps = (state) => {
+   return{
+      cart: state.shop.cart,
+   }
+}
+
+export default connect(mapStateToProps)(CartCounter);

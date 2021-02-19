@@ -17,10 +17,11 @@ const ProductThumbnail = ({ product, addToCart }) => {
 
 
    return(
-      <div className="productThumbnail" onClick={handleClick}>
+      <div className="productThumbnail" >
          <img 
          src={url}
-         alt={name} 
+         alt={name}
+         onClick={handleClick}
          className="productThumbnail__photo"/>
          <div className="productThumbnail__name">{name}</div>
          <div className="productThumbnail__price">{price}zł</div>
