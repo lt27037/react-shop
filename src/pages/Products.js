@@ -1,19 +1,23 @@
 import React from 'react';
+import '../styles/Products.scss'
+
+import { connect } from 'react-redux';
 
 import ProductThumbnail from '../components/ProductThumbnail';
 
-import '../styles/Products.scss'
 
-const Products = () => {
+const Products = ({ products }) => {
    return(
       <div className="productsContainer">
-         <ProductThumbnail />
-         <ProductThumbnail />
-         <ProductThumbnail />
-         <ProductThumbnail />
-         <ProductThumbnail />
+         {products.map(product => <ProductThumbnail key={product.id} product={product}/>)}
       </div>
    );
 };
 
-export default Products;
+const mapStateToProps = state => {
+   return{
+      products: state.shop.products,
+   }
+}
+
+export default connect(mapStateToProps)(Products);

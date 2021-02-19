@@ -4,6 +4,7 @@ import { Switch, Route } from 'react-router-dom';
 import HomePage from '../pages/HomePage';
 import Products from '../pages/Products';
 import SingleProduct from '../pages/SingleProduct';
+import Cart from '../pages/Cart';
 
 const ContentContainer = () => {
    return(
@@ -19,6 +20,10 @@ const ContentContainer = () => {
 
             <Route path="/products/:id" exact>
                <SingleProduct />
+            </Route>
+
+            <Route path="/cart">
+               <Cart />
             </Route>
 
          </Switch>
