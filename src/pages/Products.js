@@ -1,12 +1,14 @@
 import React from 'react';
-import '../styles/Products.scss'
-
-import { connect } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 import ProductThumbnail from '../components/ProductThumbnail';
 
+import '../styles/Products.scss'
 
-const Products = ({ products }) => {
+const Products = () => {
+   // @ts-ignore
+   const products = useSelector(shop => shop.shop.products);
+
    return(
       <div className="productsContainer">
          {products.map(product => <ProductThumbnail key={product.id} product={product}/>)}
@@ -14,10 +16,4 @@ const Products = ({ products }) => {
    );
 };
 
-const mapStateToProps = state => {
-   return{
-      products: state.shop.products,
-   }
-}
-
-export default connect(mapStateToProps)(Products);
+export default Products;
